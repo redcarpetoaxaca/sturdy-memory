@@ -6,7 +6,7 @@ fn main() {
      data: u128,
      hash: String,
      previous_hash: String
-   }
+   };
    
    let b = Block {
        index: 0,
