@@ -1,4 +1,10 @@
-fn main() {
+extern crate chrono;
+use chrono::{DateTime, TimeZone, NaiveDateTime,Utc};
+
+  fn main() {
+      let dt = DateTime::<Utc>::from_utc(NaiveDateTime::from_timestamp(61, 0), Utc);
+      assert_eq!(Utc.timestamp(61, 0), dt);
+
 
    struct Block {
      index: u64,
@@ -28,5 +34,6 @@ fn main() {
                        String::from("fadaf"), 
                        String::from("previous"));
 
+   
    println!("{}{} {} {} {}",b.index, b.time_stamp, b.data, b.hash, b.previous_hash);
 }
