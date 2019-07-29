@@ -1,6 +1,6 @@
 fn main() {
 
-   struck Block {
+   struct Block {
      index: u64,
      time_stamp: String,
      data: u128,
