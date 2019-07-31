@@ -19,6 +19,12 @@ jobs:
       - run:
           name: Calculate dependencies
           command: cargo generate-lockfile
+      - run:
+           name: install clippy
+           command: rustup component add clippy
+      - run:
+           name: run clippy
+           command: cargo clippy
       - restore_cache:
           keys:
             - v4-cargo-cache-{{ arch }}-{{ checksum "Cargo.lock" }}
